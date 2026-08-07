@@ -297,7 +297,9 @@ section { scroll-margin-top: calc(var(--header-h) + 12px); }
 
 .page-hero-dark h1 { color: var(--white); }
 
-.page-hero-dark .eyebrow { color: var(--gold); }
+/* Text-on-dark tint of the gold: #D4A017 itself is ~3.6:1 on the
+   dark teal band, below AA for small text. */
+.page-hero-dark .eyebrow { color: #EAC15E; }
 
 .page-hero-dark .lead { color: #cfdde2; }
 
