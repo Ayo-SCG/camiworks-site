@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 440" role="img" aria-hidden="true">
+  <!-- Abstract brand motif: calendar grid, burn gauge, ledger rows,
+       and a record trail. Decorative only; depicts nothing real. -->
+  <defs>
+    <linearGradient id="cardShade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#f5f7fa"/>
+    </linearGradient>
+  </defs>
+
+  <!-- backdrop panel -->
+  <rect x="10" y="18" width="540" height="404" rx="18" fill="#e4e8ec" opacity="0.55"/>
+
+  <!-- calendar card -->
+  <g>
+    <rect x="42" y="48" width="300" height="230" rx="14" fill="url(#cardShade)" stroke="#e4e8ec" stroke-width="2"/>
+    <rect x="42" y="48" width="300" height="46" rx="14" fill="#5E8894"/>
+    <rect x="42" y="80" width="300" height="14" fill="#5E8894"/>
+    <circle cx="68" cy="71" r="6" fill="#ffffff" opacity="0.9"/>
+    <rect x="86" y="66" width="90" height="10" rx="5" fill="#ffffff" opacity="0.75"/>
+    <!-- grid of day cells -->
+    <g fill="#5E8894">
+      <rect x="66" y="112" width="40" height="30" rx="6" opacity="0.25"/>
+      <rect x="116" y="112" width="40" height="30" rx="6" opacity="0.35"/>
+      <rect x="166" y="112" width="40" height="30" rx="6" opacity="0.2"/>
+      <rect x="216" y="112" width="40" height="30" rx="6" opacity="0.45"/>
+      <rect x="266" y="112" width="40" height="30" rx="6" opacity="0.25"/>
+      <rect x="66" y="152" width="40" height="30" rx="6" opacity="0.35"/>
+      <rect x="116" y="152" width="40" height="30" rx="6" opacity="0.2"/>
+      <rect x="166" y="152" width="40" height="30" rx="6" fill="#D4A017" opacity="0.9"/>
+      <rect x="216" y="152" width="40" height="30" rx="6" opacity="0.3"/>
+      <rect x="266" y="152" width="40" height="30" rx="6" opacity="0.4"/>
+      <rect x="66" y="192" width="40" height="30" rx="6" opacity="0.2"/>
+      <rect x="116" y="192" width="40" height="30" rx="6" opacity="0.4"/>
+      <rect x="166" y="192" width="40" height="30" rx="6" opacity="0.3"/>
+      <rect x="216" y="192" width="40" height="30" rx="6" fill="#60870C" opacity="0.55"/>
+      <rect x="266" y="192" width="40" height="30" rx="6" opacity="0.25"/>
+      <rect x="66" y="232" width="40" height="30" rx="6" opacity="0.3"/>
+      <rect x="116" y="232" width="40" height="30" rx="6" opacity="0.25"/>
+      <rect x="166" y="232" width="40" height="30" rx="6" opacity="0.35"/>
+      <rect x="216" y="232" width="40" height="30" rx="6" opacity="0.2"/>
+      <rect x="266" y="232" width="40" height="30" rx="6" opacity="0.3"/>
+    </g>
+  </g>
+
+  <!-- burn gauge card -->
+  <g>
+    <rect x="366" y="88" width="160" height="160" rx="14" fill="#ffffff" stroke="#e4e8ec" stroke-width="2"/>
+    <!-- gauge track -->
+    <path d="M 396 208 A 52 52 0 1 1 496 208" fill="none" stroke="#e4e8ec" stroke-width="14" stroke-linecap="round"/>
+    <!-- gauge fill -->
+    <path d="M 396 208 A 52 52 0 0 1 415 128" fill="none" stroke="#5E8894" stroke-width="14" stroke-linecap="round"/>
+    <!-- threshold ticks -->
+    <circle cx="446" cy="114" r="5" fill="#D4A017"/>
+    <circle cx="478" cy="128" r="5" fill="#D4A017"/>
+    <circle cx="496" cy="160" r="5" fill="#C55A5A"/>
+  </g>
+
+  <!-- ledger card -->
+  <g>
+    <rect x="366" y="272" width="160" height="118" rx="14" fill="#ffffff" stroke="#e4e8ec" stroke-width="2"/>
+    <rect x="388" y="294" width="116" height="10" rx="5" fill="#60870C" opacity="0.55"/>
+    <rect x="388" y="316" width="88" height="10" rx="5" fill="#60870C" opacity="0.4"/>
+    <rect x="388" y="338" width="102" height="10" rx="5" fill="#60870C" opacity="0.3"/>
+    <rect x="388" y="360" width="64" height="10" rx="5" fill="#e4e8ec"/>
+  </g>
+
+  <!-- record trail -->
+  <g stroke="#5E8894" stroke-width="2.5" stroke-dasharray="2 7" stroke-linecap="round" fill="none" opacity="0.8">
+    <path d="M 120 300 C 130 350, 220 372, 300 356"/>
+  </g>
+  <g fill="#5E8894">
+    <circle cx="120" cy="300" r="6"/>
+    <circle cx="212" cy="364" r="6" fill="#D4A017"/>
+    <circle cx="300" cy="356" r="6" fill="#60870C"/>
+  </g>
+</svg>

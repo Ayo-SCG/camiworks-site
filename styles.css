@@ -1,0 +1,491 @@
+/* camiworks.com — brand styles
+   Palette: Primary Teal #5E8894, Deep Green #60870C, Gold #D4A017,
+   Warm Red #C55A5A (accents only), neutrals #f5f7fa / #e4e8ec.
+   Darker teal/green shades are used where text sits on light
+   backgrounds so every text/background pair clears WCAG AA. */
+
+:root {
+  --teal: #5E8894;
+  --teal-dark: #3E606C;      /* interactive/text shade of the teal */
+  --teal-darker: #32505B;
+  --green: #60870C;
+  --green-dark: #4A6809;     /* text shade of the green */
+  --gold: #D4A017;
+  --red: #C55A5A;
+  --bg-light: #f5f7fa;
+  --line: #e4e8ec;
+  --ink: #1F2A30;
+  --ink-soft: #46555E;
+  --white: #ffffff;
+  --radius: 10px;
+  --header-h: 68px;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--white);
+  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+}
+
+img, svg { max-width: 100%; height: auto; display: block; }
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.narrow { max-width: 720px; }
+
+h1, h2, h3 {
+  line-height: 1.2;
+  margin: 0 0 0.6em;
+  letter-spacing: -0.015em;
+}
+
+h1 { font-size: clamp(1.75rem, 4.5vw, 2.75rem); font-weight: 800; }
+h2 { font-size: clamp(1.4rem, 3vw, 1.9rem); font-weight: 700; }
+h3 { font-size: 1.1rem; font-weight: 600; }
+
+p { margin: 0 0 1em; }
+
+a {
+  color: var(--teal-dark);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+a:hover { color: var(--teal-darker); }
+
+:focus-visible {
+  outline: 3px solid var(--teal-dark);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -60px;
+  z-index: 100;
+  background: var(--teal-dark);
+  color: var(--white);
+  padding: 10px 16px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: top 0.15s ease;
+}
+.skip-link:focus { top: 12px; color: var(--white); }
+
+/* Buttons */
+.button {
+  display: inline-block;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--radius);
+  padding: 10px 20px;
+  line-height: 1.4;
+  transition: background-color 0.15s ease;
+}
+
+.button-primary {
+  background: var(--teal-dark);
+  color: var(--white);
+}
+.button-primary:hover { background: var(--teal-darker); color: var(--white); }
+
+.button-light {
+  background: var(--white);
+  color: var(--teal-darker);
+}
+.button-light:hover { background: var(--bg-light); color: var(--teal-darker); }
+
+.button-lg { padding: 14px 28px; font-size: 1.05rem; }
+
+.eyebrow {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--teal-dark);
+  margin-bottom: 1.2em;
+}
+
+/* ---------------- Header and navigation ---------------- */
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.97);
+  border-bottom: 1px solid var(--line);
+  transition: box-shadow 0.2s ease;
+}
+
+.site-header.is-scrolled {
+  box-shadow: 0 2px 12px rgba(31, 42, 48, 0.08);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  height: var(--header-h);
+}
+
+.wordmark {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.wordmark-mark {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: var(--teal);
+  color: var(--white);
+  font-weight: 800;
+  font-size: 1.05rem;
+}
+
+.wordmark-text {
+  font-weight: 800;
+  font-size: 1.2rem;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+}
+
+.site-nav {
+  display: flex;
+  gap: 26px;
+  margin-left: auto;
+}
+
+.site-nav a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 4px 0;
+  border-bottom: 2px solid transparent;
+}
+
+.site-nav a:hover { color: var(--teal-dark); }
+
+.site-nav a.is-active {
+  color: var(--teal-darker);
+  font-weight: 600;
+  border-bottom-color: var(--gold);
+}
+
+.header-cta { flex-shrink: 0; }
+
+/* Mobile navigation: checkbox-driven so it works without JavaScript.
+   The input is visually hidden but stays focusable; its label acts
+   as the Menu toggle and shows the input's focus ring. */
+.nav-open-box {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.nav-toggle {
+  display: none;
+  margin-left: auto;
+  padding: 8px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--teal-darker);
+  cursor: pointer;
+  user-select: none;
+}
+
+.nav-open-box:focus-visible ~ .nav-toggle {
+  outline: 3px solid var(--teal-dark);
+  outline-offset: 2px;
+}
+
+.nav-open-box:checked ~ .nav-toggle { background: var(--bg-light); }
+
+@media (max-width: 780px) {
+  .nav-toggle { display: inline-block; }
+  .header-cta { display: none; }
+
+  .site-nav {
+    display: none;
+    position: absolute;
+    top: var(--header-h);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    margin: 0;
+    background: var(--white);
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 10px 24px rgba(31, 42, 48, 0.08);
+    padding: 8px 0 12px;
+  }
+
+  .nav-open-box:checked ~ .site-nav { display: flex; }
+
+  .site-nav a {
+    padding: 12px 24px;
+    border-bottom: none;
+    font-size: 1rem;
+  }
+
+  .site-nav a.is-active {
+    border-left: 3px solid var(--gold);
+    padding-left: 21px;
+    background: var(--bg-light);
+  }
+}
+
+/* ---------------- Shared section rhythm ---------------- */
+
+section { scroll-margin-top: calc(var(--header-h) + 12px); }
+
+/* Page openings for inner pages (each page styles its own) */
+.page-hero {
+  padding: calc(var(--header-h) + 56px) 0 52px;
+  border-bottom: 1px solid var(--line);
+}
+
+.page-hero .lead {
+  font-size: 1.15rem;
+  color: var(--ink-soft);
+  max-width: 42em;
+  margin-bottom: 0;
+}
+
+.page-hero-dark {
+  background: var(--teal-darker);
+  border-bottom: none;
+}
+
+.page-hero-dark h1 { color: var(--white); }
+
+/* Text-on-dark tint of the gold: #D4A017 itself is ~3.6:1 on the
+   dark teal band, below AA for small text. */
+.page-hero-dark .eyebrow { color: #EAC15E; }
+
+.page-hero-dark .lead { color: #cfdde2; }
+
+/* ---------------- Home ---------------- */
+
+.hero {
+  background: var(--bg-light);
+  padding: calc(var(--header-h) + 64px) 0 72px;
+  border-bottom: 1px solid var(--line);
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: 48px;
+  align-items: center;
+}
+
+.hero-sub {
+  font-size: 1.15rem;
+  color: var(--ink-soft);
+  max-width: 34em;
+  margin-bottom: 1.8em;
+}
+
+.hero-art img { width: 100%; }
+
+@media (max-width: 880px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-art { max-width: 440px; }
+}
+
+.problem { padding: 72px 0; }
+.problem p { font-size: 1.1rem; color: var(--ink-soft); margin-bottom: 0; }
+
+.preview {
+  background: var(--bg-light);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 72px 0;
+}
+
+.preview h2 { margin-bottom: 1.4em; }
+
+.preview-link {
+  margin-top: 32px;
+  font-size: 1.05rem;
+}
+
+.preview-link a { font-weight: 600; }
+
+.who { padding: 72px 0; }
+.who p { font-size: 1.1rem; color: var(--ink-soft); margin-bottom: 0; }
+
+/* Closing band (home) */
+.cta-band {
+  background: var(--teal-darker);
+  padding: 64px 0;
+  text-align: center;
+}
+
+.cta-band h2 { color: var(--white); }
+
+.cta-band p {
+  color: #cfdde2;
+  font-size: 1.1rem;
+  margin-bottom: 1.8em;
+}
+
+/* ---------------- Capability cards ---------------- */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+@media (max-width: 980px) { .card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .card-grid { grid-template-columns: 1fr; } }
+
+.card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+}
+
+.card-icon {
+  width: 42px;
+  height: 42px;
+  color: var(--teal-dark);
+  margin-bottom: 16px;
+}
+
+.card:nth-child(even) .card-icon { color: var(--green-dark); }
+
+.card h2, .card h3 { font-size: 1.1rem; margin-bottom: 0.5em; }
+
+.card p {
+  margin-bottom: 0;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+/* ---------------- Platform page ---------------- */
+
+.capabilities {
+  background: var(--bg-light);
+  padding: 64px 0 80px;
+}
+
+/* ---------------- Discipline page ---------------- */
+
+.disciplines { padding: 72px 0 80px; }
+
+.discipline-list {
+  display: grid;
+  gap: 0;
+  max-width: 780px;
+}
+
+.discipline-item {
+  display: grid;
+  grid-template-columns: 84px minmax(0, 1fr);
+  gap: 24px;
+  padding: 36px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.discipline-item:first-child { padding-top: 8px; }
+
+.discipline-num {
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: var(--green-dark);
+  line-height: 1;
+  padding-top: 4px;
+}
+
+.discipline-item h2 { font-size: 1.35rem; margin-bottom: 0.5em; }
+
+.discipline-item p { color: var(--ink-soft); margin-bottom: 0; }
+
+@media (max-width: 560px) {
+  .discipline-item { grid-template-columns: 1fr; gap: 10px; }
+  .discipline-num { font-size: 1.5rem; }
+}
+
+/* ---------------- Contact page ---------------- */
+
+.contact-hero {
+  background: var(--bg-light);
+  padding: calc(var(--header-h) + 88px) 0 96px;
+  text-align: center;
+  border-bottom: 1px solid var(--line);
+}
+
+.contact-hero .narrow { margin: 0 auto; }
+
+.contact-hero p {
+  color: var(--ink-soft);
+  font-size: 1.15rem;
+  margin-bottom: 2em;
+}
+
+.contact-note {
+  margin-top: 2.2em;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+
+/* ---------------- Footer ---------------- */
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  background: var(--white);
+  padding: 28px 0;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 32px;
+  justify-content: space-between;
+}
+
+.footer-inner p { margin: 0; }
