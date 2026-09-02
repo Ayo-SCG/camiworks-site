@@ -1,118 +1,323 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Early Access: CAMIWORKS Contract Administration Software</title>
-  <meta name="description" content="Join the early access list for CAMIWORKS, contract administration software for government contractors.">
-  <link rel="canonical" href="https://camiworks.com/early-access.html">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://camiworks.com/early-access.html">
-  <meta property="og:title" content="Early Access: CAMIWORKS Contract Administration Software">
-  <meta property="og:description" content="Join the early access list for CAMIWORKS, contract administration software for government contractors.">
-  <meta property="og:image" content="https://camiworks.com/assets/og-image.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="alternate icon" href="assets/favicon.png" type="image/png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
-  <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Early Access: CAMIWORKS Contract Administration Software</title>
+<meta name="description" content="Join the early access list for CAMIWORKS, a contract administration system built by contracting officers.">
+<meta property="og:title" content="Early Access: CAMIWORKS Contract Administration Software">
+<style>
+  :root {
+    --teal: #5E8894;
+    --deep-green: #60870C;
+    --gold: #D4A017;
+    --warm-red: #C55A5A;
+    --light: #f5f7fa;
+    --medium: #e4e8ec;
+    --ink: #1f2a2e;
+    --ink-soft: #4a565b;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--light);
+    color: var(--ink);
+    font-family: Calibri, Candara, 'Segoe UI', Optima, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .topband {
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, var(--teal) 0%, var(--deep-green) 100%);
+  }
+
+  main {
+    width: 100%;
+    max-width: 460px;
+    padding: 40px 24px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .wordmark {
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--deep-green);
+    margin: 0 0 6px;
+  }
+
+  .wordmark span {
+    color: var(--teal);
+  }
+
+  .wordmark-tm {
+    font-size: 0.45em;
+    font-weight: 600;
+    letter-spacing: 0;
+    vertical-align: top;
+    position: relative;
+    top: 0.15em;
+    margin-left: 2px;
+  }
+
+  .tagline {
+    font-size: 15px;
+    color: var(--ink-soft);
+    margin: 0 0 28px;
+    line-height: 1.5;
+    max-width: 360px;
+  }
+
+  .lede {
+    font-size: 20px;
+    line-height: 1.45;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 0 0 12px;
+  }
+
+  .lede-sub {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin: 0 0 32px;
+    max-width: 380px;
+  }
+
+  .card {
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid var(--medium);
+    border-radius: 10px;
+    padding: 28px 24px;
+    box-shadow: 0 1px 3px rgba(31, 42, 46, 0.06);
+  }
+
+  form { display: flex; flex-direction: column; gap: 14px; }
+
+  .field { display: flex; flex-direction: column; gap: 6px; text-align: left; }
+
+  label {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--ink-soft);
+  }
+
+  input[type="text"], input[type="email"] {
+    font-family: inherit;
+    font-size: 16px;
+    padding: 11px 13px;
+    border: 1px solid var(--medium);
+    border-radius: 6px;
+    background: var(--light);
+    color: var(--ink);
+    outline: none;
+    transition: border-color 0.15s ease, background 0.15s ease;
+  }
+
+  input[type="text"]:focus, input[type="email"]:focus {
+    border-color: var(--teal);
+    background: #ffffff;
+  }
+
+  .submit-btn {
+    margin-top: 8px;
+    padding: 13px 18px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+    background: var(--deep-green);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.15s ease, transform 0.1s ease;
+  }
+
+  .submit-btn:hover { background: #517209; }
+  .submit-btn:active { transform: scale(0.99); }
+  .submit-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+  .fine-print {
+    font-size: 12px;
+    color: var(--ink-soft);
+    margin-top: 12px;
+  }
+
+  .form-coming-soon {
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+
+  .status-msg {
+    display: none;
+    font-size: 14px;
+    padding: 10px 12px;
+    border-radius: 6px;
+    margin-top: 10px;
+    text-align: left;
+  }
+
+  .status-msg.error {
+    display: block;
+    background: #faeeee;
+    color: var(--warm-red);
+    border: 1px solid var(--warm-red);
+  }
+
+  .confirm {
+    display: none;
+  }
+
+  .confirm.active {
+    display: block;
+  }
+
+  .confirm h2 {
+    font-size: 19px;
+    color: var(--deep-green);
+    margin: 0 0 8px;
+  }
+
+  .confirm p {
+    font-size: 14.5px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  .value-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin: 28px 0 0;
+    text-align: left;
+  }
+
+  .value-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .value-dot {
+    flex: 0 0 6px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    margin-top: 8px;
+  }
+
+  .value-text {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
+
+  .value-text strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  footer {
+    margin-top: 36px;
+    padding-bottom: 20px;
+    text-align: center;
+  }
+
+  .footer-brand {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--teal);
+    margin: 0 0 4px;
+  }
+
+  .footer-copy {
+    font-size: 11.5px;
+    color: #8a959a;
+    margin: 0;
+  }
+
+  @media (max-width: 380px) {
+    .wordmark { font-size: 29px; }
+    .lede { font-size: 18px; }
+  }
+</style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to main content</a>
 
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="wordmark" href="index.html" aria-label="CAMIWORKS home">
-        <span class="wordmark-mark" aria-hidden="true">C</span>
-        <span class="wordmark-text">CAMIWORKS<span class="wordmark-tm">&trade;</span></span>
-      </a>
-      <input type="checkbox" id="nav-open" class="nav-open-box">
-      <label class="nav-toggle" for="nav-open">Menu</label>
-      <nav class="site-nav" aria-label="Primary">
-        <a href="index.html">Home</a>
-        <a href="platform.html">The Platform</a>
-        <a href="discipline.html">How It Holds Up</a>
-        <a href="early-access.html" class="is-active" aria-current="page">Early Access</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-      <a class="button button-primary header-cta" href="contact.html">Contact</a>
+  <div class="topband"></div>
+
+  <main>
+    <p class="wordmark">CAMI<span>WORKS<span class="wordmark-tm">&trade;</span></span></p>
+    <p class="tagline">Contract administration built by contracting officers, for the contractors doing the compliance work today.</p>
+
+    <p class="lede">The early access list is open.</p>
+    <p class="lede-sub">Leave your details below and you will be first to know when CAMIWORKS opens its doors, with priority scheduling for onboarding.</p>
+
+    <div class="card">
+      <!--
+        ================================================================
+        ZOHO CRM WEBFORM PLACEHOLDER. START.
+
+        Paste the Zoho CRM Webforms embed code (fields: name, email,
+        company) directly below this comment and above the END marker,
+        replacing the coming-soon line inside the div.
+        ================================================================
+      -->
+      <div id="zoho-webform" class="zoho-webform">
+        <p class="form-coming-soon">The early access form is coming soon.</p>
+      </div>
+      <!--
+        ================================================================
+        ZOHO CRM WEBFORM PLACEHOLDER. END.
+        ================================================================
+      -->
+
+      <div class="confirm" id="confirmMsg">
+        <h2>You're on the list.</h2>
+        <p>Thank you for your interest in CAMIWORKS. We will reach out as early access opens, starting with the details you shared here.</p>
+      </div>
     </div>
-  </header>
 
-  <main id="main">
-
-    <section class="page-hero">
-      <div class="container">
-        <p class="eyebrow">Early Access</p>
-        <h1>The early access list is open.</h1>
-        <p class="lead">Leave your details and you will be first to know when CAMIWORKS opens, with priority scheduling for onboarding.</p>
+    <div class="value-grid">
+      <div class="value-item">
+        <span class="value-dot"></span>
+        <span class="value-text"><strong>First notice.</strong> You hear about CAMIWORKS access before it opens broadly.</span>
       </div>
-    </section>
-
-    <section class="early-access" aria-labelledby="early-access-form-heading">
-      <div class="container narrow">
-
-        <div class="early-access-form">
-          <h2 id="early-access-form-heading" class="early-access-form-heading">Join the list</h2>
-          <p class="early-access-form-note">Name, email, and company. Nothing else.</p>
-
-          <!--
-            ================================================================
-            ZOHO CRM WEBFORM PLACEHOLDER. START.
-
-            Paste the Zoho CRM Webforms embed code (fields: name, email,
-            company) directly below this comment and above the END marker.
-            Nothing else on this page needs to change when the form lands.
-            ================================================================
-          -->
-          <div id="zoho-webform" class="zoho-webform">
-            <p class="early-access-interim">The sign-up form is on its way. Until it lands, email <a href="mailto:notifications@camiworks.com">notifications@camiworks.com</a> with your name and company and we will add you to the list.</p>
-          </div>
-          <!--
-            ================================================================
-            ZOHO CRM WEBFORM PLACEHOLDER. END.
-            ================================================================
-          -->
-        </div>
-
+      <div class="value-item">
+        <span class="value-dot"></span>
+        <span class="value-text"><strong>Priority onboarding.</strong> Early access names move to the front of the onboarding schedule.</span>
       </div>
-    </section>
-
-    <section class="early-access-points" aria-label="What early access includes">
-      <div class="container narrow">
-        <div class="point-list">
-
-          <div class="point-item">
-            <h2>First notice.</h2>
-            <p>You hear about CAMIWORKS access before it opens broadly.</p>
-          </div>
-
-          <div class="point-item">
-            <h2>Priority onboarding.</h2>
-            <p>Early access names move to the front of the onboarding schedule.</p>
-          </div>
-
-          <div class="point-item">
-            <h2>A voice in what gets built.</h2>
-            <p>Early access contractors help shape what CAMIWORKS builds next.</p>
-          </div>
-
-        </div>
+      <div class="value-item">
+        <span class="value-dot"></span>
+        <span class="value-text"><strong>A voice in what gets built.</strong> Early access contractors help shape what CAMIWORKS builds next.</span>
       </div>
-    </section>
+    </div>
 
+    <footer>
+      <p class="footer-brand">Ayo Strategic Consulting Group</p>
+      <p class="footer-copy">© 2026 Ayo Strategic Consulting Group, LLC. All rights reserved.</p>
+    </footer>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>&copy; 2026 Ayo Strategic Consulting Group, LLC. All rights reserved.</p>
-      <p>CAMIWORKS is a product of <a href="https://www.ayoscg.com">Ayo Strategic Consulting Group, LLC</a>.</p>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
