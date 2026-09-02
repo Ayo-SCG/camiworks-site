@@ -117,6 +117,15 @@ a:hover { color: var(--teal-darker); }
 }
 .button-light:hover { background: var(--bg-light); color: var(--teal-darker); }
 
+.button-secondary {
+  background: var(--white);
+  color: var(--teal-darker);
+  border: 1.5px solid var(--teal-dark);
+  padding: 8.5px 18.5px;
+}
+.button-secondary:hover { background: var(--bg-light); color: var(--teal-darker); }
+.button-secondary.button-lg { padding: 12.5px 26.5px; }
+
 .button-lg { padding: 14px 28px; font-size: 1.05rem; }
 
 .eyebrow {
@@ -179,6 +188,16 @@ a:hover { color: var(--teal-darker); }
   color: var(--ink);
 }
 
+.wordmark-tm {
+  font-size: 0.55em;
+  font-weight: 600;
+  letter-spacing: 0;
+  vertical-align: top;
+  position: relative;
+  top: -0.1em;
+  margin-left: 0.15em;
+}
+
 .site-nav {
   display: flex;
   gap: 26px;
@@ -239,7 +258,7 @@ a:hover { color: var(--teal-darker); }
 
 .nav-open-box:checked ~ .nav-toggle { background: var(--bg-light); }
 
-@media (max-width: 780px) {
+@media (max-width: 900px) {
   .nav-toggle { display: inline-block; }
   .header-cta { display: none; }
 
@@ -323,6 +342,12 @@ section { scroll-margin-top: calc(var(--header-h) + 12px); }
   color: var(--ink-soft);
   max-width: 34em;
   margin-bottom: 1.8em;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .hero-art img { width: 100%; }
@@ -470,6 +495,86 @@ section { scroll-margin-top: calc(var(--header-h) + 12px); }
   font-size: 0.95rem;
   color: var(--ink-soft);
 }
+
+/* ---------------- Early access page ---------------- */
+
+.early-access {
+  background: var(--bg-light);
+  padding: 56px 0 64px;
+  border-bottom: 1px solid var(--line);
+}
+
+.early-access .narrow { margin: 0 auto; }
+
+.early-access-form {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+}
+
+.early-access-form-heading { font-size: 1.35rem; margin-bottom: 0.3em; }
+
+.early-access-form-note {
+  color: var(--ink-soft);
+  margin-bottom: 1.4em;
+}
+
+.early-access-interim {
+  color: var(--ink-soft);
+  margin-bottom: 0;
+}
+
+/* Zoho CRM webform: once the embed lands, keep its controls on the
+   site's type, radius, and colors. Zoho markup is not under our control,
+   so these selectors stay generic on purpose. */
+.zoho-webform input[type="text"],
+.zoho-webform input[type="email"] {
+  width: 100%;
+  font: inherit;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  color: var(--ink);
+  background: var(--white);
+}
+
+.zoho-webform input[type="text"]:focus-visible,
+.zoho-webform input[type="email"]:focus-visible {
+  border-color: var(--teal-dark);
+}
+
+.zoho-webform input[type="submit"],
+.zoho-webform button[type="submit"] {
+  font: inherit;
+  font-weight: 600;
+  padding: 14px 28px;
+  border: 0;
+  border-radius: var(--radius);
+  background: var(--teal-dark);
+  color: var(--white);
+  cursor: pointer;
+}
+
+.zoho-webform input[type="submit"]:hover,
+.zoho-webform button[type="submit"]:hover { background: var(--teal-darker); }
+
+.early-access-points { padding: 64px 0 80px; }
+
+.early-access-points .narrow { margin: 0 auto; }
+
+.point-list { display: grid; gap: 0; }
+
+.point-item {
+  padding: 28px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.point-item:first-child { padding-top: 0; }
+
+.point-item h2 { font-size: 1.25rem; margin-bottom: 0.4em; }
+
+.point-item p { color: var(--ink-soft); margin-bottom: 0; }
 
 /* ---------------- Footer ---------------- */
 
