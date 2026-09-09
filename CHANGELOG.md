@@ -2,6 +2,17 @@
 
 All notable changes to camiworks.com are recorded here. Newest first.
 
+## 2026-09-09 (thank-you page)
+
+### What changed
+
+- A new standalone page, thank-you.html, joins the site at the root. Like early-access.html it carries its own header band, wordmark, confirmation message, "What happens next" card, a button to camiworks.com, and footer, with its own CSS. It is not built on the shared site template and is not linked from the navigation.
+- The page carries a noindex robots tag, since visitors only reach it by redirect after submitting the early access form.
+
+### Why
+
+Submitting the early access form navigates away from the page, so the confirmation has to live on a page of its own. This is the page the Zoho webform's return URL will send people to.
+
 ## 2026-09-09
 
 ### What changed
