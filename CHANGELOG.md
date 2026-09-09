@@ -2,6 +2,19 @@
 
 All notable changes to camiworks.com are recorded here. Newest first.
 
+## 2026-09-09
+
+### What changed
+
+- early-access.html now carries the live Zoho CRM webform (First Name, Last Name, Email, Company) between the START and END markers, replacing the coming-soon placeholder line. The Zoho block is kept whole: the hidden account inputs, the honeypot field, Zoho's own style block, the mandatory-field script, and the analytics script at the end are all in place.
+- Three edits to the Zoho block as delivered: the Reset button was removed so a stray tap cannot wipe what someone typed; the duplicate viewport and content-type meta tags inside the form div were removed, since the page head already carries both and a second viewport tag can cause zoom problems on phones; and the Email input is now type email (Zoho's ftype attribute is untouched) so phones show the keyboard with the @ key.
+- The hidden confirmation block ("You're on the list.") and its CSS were removed. The Zoho form navigates away on submit, so that message could never display.
+- Override CSS was added at the end of the page's style block so the embed matches the page: full-width stacked fields, labels above inputs in the page font, page input styling and focus colour, the deep green full-width Claim My Spot button, and Zoho's form title and help columns hidden. Zoho's own wrapper padding, margin, and inline Arial label font are overridden explicitly, since Zoho's style block sits later in the document and would otherwise win.
+
+### Why
+
+The Zoho embed code is the approved submission path for early access sign-ups. Placing it with these adjustments keeps Zoho's required plumbing intact while making the form read as part of the page on phones, where the QR code traffic lands.
+
 ## 2026-09-02 (correction)
 
 ### What changed
