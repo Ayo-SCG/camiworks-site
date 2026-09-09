@@ -2,6 +2,18 @@
 
 All notable changes to camiworks.com are recorded here. Newest first.
 
+## 2026-09-09 (form redirect)
+
+### What changed
+
+- The Zoho CRM webform block in early-access.html was replaced in whole with a regenerated form from Zoho. Its hidden account values differ from the previous block, and its returnURL is now https://camiworks.com/thank-you.html, so submitting the form lands on the thank-you page.
+- The same treatments as the first placement were applied to the new block: Reset button removed, duplicate viewport and content-type meta tags removed, and the Email input set to type email with Zoho's ftype attribute untouched. The hidden inputs, honeypot, Zoho's style block, validation script, and analytics script are all kept.
+- The override CSS at the end of the page's style block is unchanged and applies to the new block as before.
+
+### Why
+
+The first Zoho embed had no return URL, so a submission left the visitor on a Zoho page. With the thank-you page live, the form was regenerated in Zoho with the redirect set, and the regenerated block carries new account values that had to be placed whole.
+
 ## 2026-09-09 (thank-you page)
 
 ### What changed
