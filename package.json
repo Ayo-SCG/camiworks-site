@@ -1,0 +1,12 @@
+{
+  "name": "camiworks-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Test harness for camiworks.com. The site itself is static HTML, CSS, and vanilla JavaScript with no build step; nothing in this file is needed to serve it.",
+  "scripts": {
+    "test": "node --test \"test/**/*.test.js\""
+  },
+  "devDependencies": {
+    "jsdom": "^30.0.1"
+  }
+}

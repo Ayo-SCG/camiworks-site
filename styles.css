@@ -357,6 +357,106 @@ section { scroll-margin-top: calc(var(--header-h) + 12px); }
   .hero-art { max-width: 440px; }
 }
 
+/* Product tour (home): a silent looping video directly below the hero. */
+
+.tour {
+  padding: 64px 0 72px;
+  text-align: center;
+  border-bottom: 1px solid var(--line);
+}
+
+.tour-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tour-sub {
+  font-size: 1.15rem;
+  color: var(--ink-soft);
+  max-width: 34em;
+  margin-bottom: 1.6em;
+}
+
+.tour .button { margin-bottom: 36px; }
+
+/* The frame reserves the video's 16 by 9 space before anything loads,
+   and carries the poster as a background so the section never shows
+   an empty box, even if the video file fails to load. */
+.tour-frame {
+  position: relative;
+  width: 100%;
+  max-width: 1920px;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 10px 24px rgba(31, 42, 48, 0.08);
+  overflow: hidden;
+  background: var(--bg-light) url("assets/tour/CAMIWORKS_Website_Loop_poster.jpg") center / cover no-repeat;
+}
+
+.tour-video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tour-video.is-failed { visibility: hidden; }
+
+/* Pause and play toggle. White glyph on a near-solid ink chip with a
+   white edge, so it reads over light and dark frames alike. */
+.tour-toggle {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  background: rgba(31, 42, 48, 0.85);
+  color: var(--white);
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.tour-toggle:hover { background: rgba(31, 42, 48, 0.97); }
+
+.tour-toggle:focus-visible {
+  outline: 3px solid var(--white);
+  outline-offset: 2px;
+  border-radius: 50%;
+}
+
+.tour-toggle[hidden] { display: none; }
+
+.tour-toggle svg { width: 20px; height: 20px; }
+
+.tour-toggle .icon-play { display: none; }
+.tour-toggle.is-paused .icon-play { display: block; }
+.tour-toggle.is-paused .icon-pause { display: none; }
+
+@media (max-width: 767px) {
+  .tour { padding: 56px 0 64px; }
+  .tour .button { display: block; width: 100%; }
+}
+
+/* Visually hidden, still read by assistive technology. */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .problem { padding: 72px 0; }
 .problem p { font-size: 1.1rem; color: var(--ink-soft); margin-bottom: 0; }
 

@@ -14,12 +14,32 @@ This is a standalone static site: plain HTML, CSS, and a few lines of vanilla Ja
 | `contact.html` | Contact |
 | `styles.css` | All styling, shared by every page |
 | `script.js` | Progressive touches (header shadow, mobile-menu close); the site works without it |
+| `tour-video.js` | Home page product tour video: pause and play toggle, reduced motion, offscreen pausing, poster fallback; loaded by `index.html` only |
 | `assets/` | SVG graphics, favicon, and the Open Graph image |
+| `assets/tour/` | The product tour video (`CAMIWORKS_Website_Loop.mp4`) and its poster, self hosted |
 | `robots.txt` | Allows all crawlers |
+| `test/`, `package.json` | Test harness (Node's built-in test runner with jsdom, dev dependency only); nothing here is needed to serve the site |
 
 ## Making changes
 
 Content changes go by pull request — branch, edit, open a PR, review, merge. Nothing is committed to `main` directly. Because there is no build step, what is merged is exactly what is served.
+
+### Tests
+
+The site needs no tooling to run, but its home page tour section has tests. With Node 22 or later:
+
+```
+npm install
+npm test
+```
+
+The deployed server (GitHub Pages) is not configured in this repository, so the checks that the MP4 answers range requests with `206`, `Accept-Ranges: bytes`, and `video/mp4` are skipped unless pointed at a live site:
+
+```
+SITE_URL=https://camiworks.com npm test
+```
+
+The tests run on every pull request through `.github/workflows/test.yml`.
 
 ## Publishing
 
