@@ -2,6 +2,17 @@
 
 All notable changes to camiworks.com are recorded here. Newest first.
 
+## 2026-09-16 (corrected tour video)
+
+### What changed
+
+- The tour video at assets/tour/CAMIWORKS_Website_Loop.mp4 was replaced in place with a corrected render (pull request #8). The corrected render changes only the closing slide, which now shows camiworks.com instead of ayoscg.com. The file name, the poster, and the page markup are unchanged, and the file is still served as delivered with no re-encoding.
+- The hidden text alternative for the video in index.html now ends "schedule a live demo at camiworks.com" to match the closing slide. The test that checks the exact description text is updated to match. Nothing else on the site changed; the footer's link to Ayo Strategic Consulting Group at ayoscg.com stays as it is.
+
+### Why
+
+The tour should send visitors to the product's own domain, and the text alternative has to describe what the video actually shows.
+
 ## 2026-09-16 (product tour video)
 
 ### What changed
