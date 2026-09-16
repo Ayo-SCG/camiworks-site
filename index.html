@@ -62,6 +62,34 @@
       </div>
     </section>
 
+    <!-- Product tour -->
+    <section class="tour" aria-labelledby="tour-heading">
+      <div class="container tour-inner">
+        <p class="eyebrow">SEE IT IN ACTION</p>
+        <h2 id="tour-heading">A quick tour of CAMIWORKS&trade;</h2>
+        <p class="tour-sub">See the contract file, clause inventory, funding, ethics registers, calendar review, and audit log in under ninety seconds.</p>
+        <a class="button button-primary button-lg" href="contact.html">Schedule your live demo</a>
+        <div class="tour-frame">
+          <video
+            class="tour-video"
+            src="assets/tour/CAMIWORKS_Website_Loop.mp4"
+            poster="assets/tour/CAMIWORKS_Website_Loop_poster.jpg"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            aria-describedby="tour-video-description">
+          </video>
+          <button type="button" class="tour-toggle" aria-label="Pause tour video" hidden>
+            <svg class="icon-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+            <svg class="icon-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M8 5.5v13a1 1 0 0 0 1.52.85l10.4-6.5a1 1 0 0 0 0-1.7L9.52 4.65A1 1 0 0 0 8 5.5z"/></svg>
+          </button>
+        </div>
+        <p id="tour-video-description" class="visually-hidden">A silent product tour of CAMIWORKS, contract administration and management built for government contractors. Screens shown, in order: the contract file, where every award lives in one organized record; fifteen file sections from solicitation to closeout; an overview of compliance status, next dates, and funding; the clause inventory, where every FAR and DFARS clause is tracked with each flowdown decision recorded; cybersecurity clauses carried as compliance obligations; funding, showing funded, invoiced, paid, and burn for each contract; value and funding calculated from the CLINs; CLIN tracking for base and option years; ethics registers for disclosures, gifts, and acknowledgments; determination drift, showing where a contract departs from the knowledge base and why; calendar review, where past due items rise to the top; and the audit log, where every action is recorded and ready to export. The tour closes with an invitation to schedule a live demo at ayoscg.com.</p>
+      </div>
+    </section>
+
     <!-- The problem -->
     <section class="problem" aria-labelledby="problem-heading">
       <div class="container narrow">
@@ -132,5 +160,6 @@
   </footer>
 
   <script src="script.js"></script>
+  <script src="tour-video.js"></script>
 </body>
 </html>

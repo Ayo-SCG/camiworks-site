@@ -2,6 +2,20 @@
 
 All notable changes to camiworks.com are recorded here. Newest first.
 
+## 2026-09-16 (product tour video)
+
+### What changed
+
+- The home page gains a See It In Action section directly below the hero: a silent, looping product tour video under the heading A quick tour of CAMIWORKS™, one supporting sentence, and a Schedule your live demo button that goes to the existing contact page (contact.html), the same target as the hero's Start a conversation button.
+- The video is a native HTML video element, self hosted from assets/tour/ (CAMIWORKS_Website_Loop.mp4 and CAMIWORKS_Website_Loop_poster.jpg, committed as delivered, with no re-encoding). It autoplays muted, loops, plays inline on iOS, shows no browser controls, preloads metadata only, and keeps its poster visible before it loads and if it fails to load. Both sources are relative paths on the site's own origin. No third party player, script, font, or origin was added, and the site still sets no Content Security Policy.
+- A pause and play toggle sits in the corner of the video. It is a native button, so it works by mouse, touch, and keyboard, and its accessible name changes with state (Pause tour video, Play tour video). It is hidden in the markup and revealed by the script, so it never appears without the behaviour behind it. Visitors whose system asks for reduced motion get the poster and the toggle in the play state instead of autoplay. The video pauses when scrolled fully out of view and resumes when it returns, unless the visitor paused it. A visually hidden paragraph, linked by aria-describedby, describes the tour screen by screen for people who cannot see it. All of this lives in a new tour-video.js, loaded by the home page only.
+- Supporting styles in styles.css: the section layout (text centered above the video, stacked and full width on phones), a 16 by 9 frame capped at the video's natural 1920 pixel width that reserves its space before the video loads and carries the poster as a background, rounded corners and a shadow matching the site's cards, the toggle, and a visually hidden utility class.
+- A test suite (Node's built in test runner with jsdom as the only dev dependency) covers the section's placement and exact copy, the absence of dashes, the video attributes and text alternative, the demo button's use of an existing link, the toggle and its accessible name, reduced motion, offscreen pausing, the poster fallback, the absence of any new external origin, and the presence of the two media files. When SITE_URL is set it also checks that the deployed server answers a range request for the MP4 with 206, Accept-Ranges: bytes, and video/mp4, and caches both files like the site's other assets. A GitHub Actions workflow runs the suite on every pull request. Nothing in the harness is needed to serve the site.
+
+### Why
+
+Visitors should see the product working near the top of the home page without leaving the site and without anything loading from a third party, and be able to schedule a demo from the same place. The pause control, reduced motion handling, and text alternative keep the moving content within WCAG 2.2, and the tests make the section's promises checkable on every change.
+
 ## 2026-09-09 (form redirect)
 
 ### What changed
