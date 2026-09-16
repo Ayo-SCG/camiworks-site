@@ -2,6 +2,17 @@
 
 All notable changes to camiworks.com are recorded here. Newest first.
 
+## 2026-09-16 (tour video company name)
+
+### What changed
+
+- Both tour media files in assets/tour, CAMIWORKS_Website_Loop.mp4 and CAMIWORKS_Website_Loop_poster.jpg, were replaced in place with corrected renders. The only change in both is that the company name now reads Ayo Strategic Consulting Group, LLC. The file names, the page markup, the description text, and the styles are unchanged, and both files are still served as delivered with no re-encoding.
+- The replacement landed on main directly in the upload commit that preceded pull request #10; that pull request carried the same files and merged with no further change. This entry records the correction.
+
+### Why
+
+The company name on the tour's title and closing slides should match the legal name used everywhere else on the site, including the footer.
+
 ## 2026-09-16 (corrected tour video)
 
 ### What changed
